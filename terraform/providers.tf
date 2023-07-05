@@ -10,7 +10,8 @@ terraform {
 
 provider "openstack" {
   user_name   = "admin"
-  tenant_name = "admin"
   password    = "tpcloud"
   auth_url    = "http://10.0.20.16/identity"
+  tenant_name = "admin"
+  region      = var.region_name
 }
