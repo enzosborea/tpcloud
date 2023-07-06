@@ -178,3 +178,6 @@ resource "openstack_compute_volume_attach_v2" "volume_attach" {
 Ce fichier à plusieurs fonctions, celui-ci permet de créer une image Ubuntu 22.04 LTS en format qcow2 permettant d’instancier nos VMs, d’instancier deux VMs à partir de ce fichier avec une flavor (m1.small), de créer nos volumes et de les attacher pour ces machines, de créer nos réseaux internes et externes et d’assigner des IPs flottantes.
 
 Une fois ce ce code terraform déployé avec la commande `terraform apply`, nous obtenons sur notre openstack les ressources suivantes :
+
+<img width="417" alt="Capture d’écran 2023-07-06 à 11 06 09" src="https://github.com/enzosborea/tpcloud/assets/57955315/571a2f50-1f10-493e-a3a6-641f567490be">
+
