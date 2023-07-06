@@ -91,6 +91,8 @@ variable "region_name" {
 
 Ce fichier permet de déclarer des variables pour le réseau externe, interne et la région de notre openstack.
 
+**main.tf**
+
 ```hcl
 resource "openstack_images_image_v2" "ubuntu" {
   name             = "ubuntu-lts"
@@ -164,7 +166,6 @@ resource "openstack_blockstorage_volume_v2" "volume" {
   name          = "my-volume-${count.index}"
   size          = 10  # Taille du volume en gigaoctets
   image_id      = openstack_images_image_v2.ubuntu.id
-  availability_zone = "zone-1"
 }
 
 resource "openstack_compute_volume_attach_v2" "volume_attach" {
@@ -180,4 +181,3 @@ Ce fichier à plusieurs fonctions, celui-ci permet de créer une image Ubuntu 22
 Une fois ce ce code terraform déployé avec la commande `terraform apply`, nous obtenons sur notre openstack les ressources suivantes :
 
 <img width="417" alt="Capture d’écran 2023-07-06 à 11 06 09" src="https://github.com/enzosborea/tpcloud/assets/57955315/571a2f50-1f10-493e-a3a6-641f567490be">
-
